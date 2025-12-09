@@ -1,0 +1,143 @@
+openapi: 3.0.4
+info:
+  title: Working Days
+  description: Working Days is a simple tool for getting the number of working days in a month. It returns the number of working days in the given month.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/workingdays:
+    get:
+      summary: Get Working Days
+      description: Working Days is a simple tool for getting the number of working days in a month. It returns the number of working days in the given month.
+      operationId: workingdays
+      parameters:
+      - name: country
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The country you want to get the number of working days for (e.g. US)
+        example: US
+      - name: year
+        in: query
+        schema:
+          type: integer
+        required: true
+        description: The year you want to get the number of working days for (e.g. 2023)
+        example: '2023'
+      - name: month
+        in: query
+        schema:
+          type: integer
+        required: false
+        description: The 2 digit month you want to get the number of working days for (e.g. 10)
+        example: '10'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  workingDaysCount: 21
+                  nonWorkingDaysCount: 10
+                  workingDays:
+                  - 2023-10-02
+                  - 2023-10-03
+                  - 2023-10-04
+                  - 2023-10-05
+                  - 2023-10-06
+                  - 2023-10-10
+                  - 2023-10-11
+                  - 2023-10-12
+                  - 2023-10-13
+                  - 2023-10-16
+                  - 2023-10-17
+                  - 2023-10-18
+                  - 2023-10-19
+                  - 2023-10-20
+                  - 2023-10-23
+                  - 2023-10-24
+                  - 2023-10-25
+                  - 2023-10-26
+                  - 2023-10-27
+                  - 2023-10-30
+                  - 2023-10-31
+                  nonWorkingDays:
+                  - date: 2023-10-01
+                    reasons:
+                    - weekend
+                    holiday_name: 
+                  - date: 2023-10-07
+                    reasons:
+                    - weekend
+                    holiday_name: 
+                  - date: 2023-10-08
+                    reasons:
+                    - weekend
+                    holiday_name: 
+                  - date: 2023-10-09
+                    reasons:
+                    - public holiday
+                    holiday_name: Columbus Day
+                  - date: 2023-10-14
+                    reasons:
+                    - weekend
+                    holiday_name: 
+                  - date: 2023-10-15
+                    reasons:
+                    - weekend
+                    holiday_name: 
+                  - date: 2023-10-21
+                    reasons:
+                    - weekend
+                    holiday_name: 
+                  - date: 2023-10-22
+                    reasons:
+                    - weekend
+                    holiday_name: 
+                  - date: 2023-10-28
+                    reasons:
+                    - weekend
+                    holiday_name: 
+                  - date: 2023-10-29
+                    reasons:
+                    - weekend
+                    holiday_name: 
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
