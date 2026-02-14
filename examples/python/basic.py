@@ -17,14 +17,11 @@ def call_workingdays_api():
     Make a GET request to the Working Days API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;country&#x27;: &#x27;US&#x27;, &#x27;year&#x27;: 2023, &#x27;month&#x27;: 10}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
