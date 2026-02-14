@@ -1,9 +1,18 @@
 {
   "name": "@apiverve/workingdays",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "Working Days is a simple tool for getting the number of working days in a month. It returns the number of working days in the given month.",
   "main": "index.js",
   "types": "index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "mocha",
     "example": "node examples/basic.js"
@@ -14,14 +23,18 @@
     "directory": "npm"
   },
   "keywords": [
-    "working days", "working days api", "working days tool", "working days software", "working days service"
+    ""
   ],
-  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "author": {
+    "name": "APIVerve",
+    "email": "hello@apiverve.com",
+    "url": "https://apiverve.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/apiverve/workingdays-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/workingdays?utm_source=npm",
+  "homepage": "https://apiverve.com/marketplace/workingdays?utm_source=npm&utm_medium=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
