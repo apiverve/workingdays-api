@@ -16,8 +16,8 @@ const api = new workingdaysAPI({
 // Example query
 var query = {
   country: "US",
-  year: 2023,
-  month: 10
+  month: 10,
+  year: 2026
 };
 
 // Make the API request using callback
