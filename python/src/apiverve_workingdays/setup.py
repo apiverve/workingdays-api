@@ -10,20 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_workingdays',
-    version='1.1.12',
+    version='1.1.13',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
     description='Working Days is a simple tool for getting the number of working days in a month. It returns the number of working days in the given month.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com',
-    project_urls={
-        'Homepage': 'https://apiverve.com',
-        'Documentation': 'https://docs.apiverve.com/ref/workingdays',
-        'Source': 'https://github.com/apiverve/workingdays-api',
-        'Bug Tracker': 'https://github.com/apiverve/workingdays-api/issues'
-    },
+    url='https://apiverve.com/marketplace/workingdays?utm_source=pypi&utm_medium=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
