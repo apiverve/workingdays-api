@@ -11,24 +11,21 @@ namespace APIVerve.API.WorkingDays
     public class WorkingDaysQueryOptions
     {
         /// <summary>
-        /// The country you want to get the number of working days for (e.g. US)
-        /// Example: US
+        /// The 2-letter country code you want to get the number of working days for
         /// </summary>
         [JsonProperty("country")]
         public string Country { get; set; }
 
         /// <summary>
-        /// The year you want to get the number of working days for (e.g. 2023)
-        /// Example: 2023
-        /// </summary>
-        [JsonProperty("year")]
-        public string Year { get; set; }
-
-        /// <summary>
-        /// The 2 digit month you want to get the number of working days for (e.g. 10)
-        /// Example: 10
+        /// The month you want to get the number of working days for
         /// </summary>
         [JsonProperty("month")]
         public string Month { get; set; }
+
+        /// <summary>
+        /// The year you want to get the number of working days for
+        /// </summary>
+        [JsonProperty("year")]
+        public string Year { get; set; }
     }
 }
