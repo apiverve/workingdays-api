@@ -23,7 +23,11 @@ class ValidationError(WorkingdaysAPIClientError):
 
 class WorkingdaysAPIClient:
     # Validation rules for parameters (generated from schema)
-    VALIDATION_RULES = {"country": {"type": "string", "required": True, "minLength": 2, "maxLength": 2}, "month": {"type": "integer", "required": False, "min": 1, "max": 12}, "year": {"type": "integer", "required": False, "min": 2000, "max": 2050, "default": 2026}}
+    VALIDATION_RULES = {
+        "country": {"type": "string", "required": True, "minLength": 2, "maxLength": 2},
+        "month": {"type": "integer", "required": False, "min": 1, "max": 12},
+        "year": {"type": "integer", "required": False, "min": 2000, "max": 2050, "default": 2026}
+    }
 
     # Format validation patterns
     FORMAT_PATTERNS = {
@@ -71,18 +75,10 @@ class WorkingdaysAPIClient:
                 "API key is required. Get your API key at: https://apiverve.com"
             )
 
-        # Check format (alphanumeric, hyphens, and underscores for prefixed keys)
+        # Check format (GUID, prefixed keys like apv_xxx, or alphanumeric)
         if not re.match(r'^[a-zA-Z0-9_-]+$', api_key):
             raise WorkingdaysAPIClientError(
                 "Invalid API key format. API key should only contain letters, numbers, hyphens, and underscores. "
-                "Get your API key at: https://apiverve.com"
-            )
-
-        # Check length (at least 32 characters without hyphens/underscores)
-        trimmed_key = api_key.replace('-', '').replace('_', '')
-        if len(trimmed_key) < 32:
-            raise WorkingdaysAPIClientError(
-                "Invalid API key. API key appears to be too short. "
                 "Get your API key at: https://apiverve.com"
             )
 
