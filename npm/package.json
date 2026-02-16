@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/workingdays",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Working Days is a simple tool for getting the number of working days in a month. It returns the number of working days in the given month.",
   "main": "index.js",
   "types": "index.d.ts",
