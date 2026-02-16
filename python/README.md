@@ -44,7 +44,11 @@ from apiverve_workingdays.apiClient import WorkingdaysAPIClient
 # Initialize the client with your APIVerve API key
 api = WorkingdaysAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "US", "month": 10, "year": 2026 }
+query = {
+    "country": "US",
+    "month": 10,
+    "year": 2026
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "country": "US", "month": 10, "year": 2026 }
+query = {
+    "country": "US",
+    "month": 10,
+    "year": 2026
+}
 ```
 
 ###### Simple Request
@@ -216,7 +224,11 @@ from apiverve_workingdays.apiClient import WorkingdaysAPIClient, WorkingdaysAPIC
 
 api = WorkingdaysAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "US", "month": 10, "year": 2026 }
+query = {
+    "country": "US",
+    "month": 10,
+    "year": 2026
+}
 
 try:
     result = api.execute(query)
@@ -237,7 +249,11 @@ from apiverve_workingdays.apiClient import WorkingdaysAPIClient, WorkingdaysAPIC
 
 api = WorkingdaysAPIClient("[YOUR_API_KEY]")
 
-query = { "country": "US", "month": 10, "year": 2026 }
+query = {
+    "country": "US",
+    "month": 10,
+    "year": 2026
+}
 
 try:
     result = api.execute(query)
@@ -271,7 +287,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_workingdays.apiClient import WorkingdaysAPIClient, WorkingdaysAPIClientError
 
-query = { "country": "US", "month": 10, "year": 2026 }
+query = {
+    "country": "US",
+    "month": 10,
+    "year": 2026
+}
 
 # Using context manager ensures proper cleanup
 with WorkingdaysAPIClient("[YOUR_API_KEY]") as api:
@@ -297,7 +317,11 @@ from apiverve_workingdays.apiClient import WorkingdaysAPIClient
 # Enable debug mode
 api = WorkingdaysAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "country": "US", "month": 10, "year": 2026 }
+query = {
+    "country": "US",
+    "month": 10,
+    "year": 2026
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -312,8 +336,13 @@ from apiverve_workingdays.apiClient import WorkingdaysAPIClient
 
 api = WorkingdaysAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "country": "US",
+    "month": 10,
+    "year": 2026
+}
+
 try:
-    query = { "country": "US", "month": 10, "year": 2026 }
     result = api.execute(query)
     print(result)
 finally:
