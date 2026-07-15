@@ -4,24 +4,36 @@ declare module '@apiverve/workingdays' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface workingdaysResponse {
     status: string;
     error: string | null;
     data: WorkingDaysData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface WorkingDaysData {
-      workingDaysCount:    number;
-      nonWorkingDaysCount: number;
-      workingDays:         Date[];
+      workingDaysCount:    number | null;
+      nonWorkingDaysCount: number | null;
+      workingDays:         (Date | null)[];
       nonWorkingDays:      NonWorkingDay[];
   }
   
   interface NonWorkingDay {
-      date:        Date;
-      reasons:     Reason[];
+      date:        Date | null;
+      reasons:     (Reason | null)[];
       holidayName: null | string;
   }
   
