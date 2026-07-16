@@ -20,12 +20,12 @@ namespace APIVerve.API.WorkingDays
         /// The month you want to get the number of working days for
         /// </summary>
         [JsonProperty("month")]
-        public string Month { get; set; }
+        public int? Month { get; set; }
 
         /// <summary>
         /// The year you want to get the number of working days for
         /// </summary>
         [JsonProperty("year")]
-        public string Year { get; set; }
+        public int? Year { get; set; }
     }
 }
