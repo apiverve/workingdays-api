@@ -25,18 +25,21 @@ namespace APIVerve.API.WorkingDays
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("workingDaysCount")]
-        public long WorkingDaysCount { get; set; }
+        public long? WorkingDaysCount { get; set; }
 
         [JsonProperty("nonWorkingDaysCount")]
-        public long NonWorkingDaysCount { get; set; }
+        public long? NonWorkingDaysCount { get; set; }
 
         [JsonProperty("workingDays")]
-        public DateTimeOffset[] WorkingDays { get; set; }
+        public DateTimeOffset?[] WorkingDays { get; set; }
 
         [JsonProperty("nonWorkingDays")]
         public NonWorkingDay[] NonWorkingDays { get; set; }
@@ -45,13 +48,25 @@ namespace APIVerve.API.WorkingDays
     public partial class NonWorkingDay
     {
         [JsonProperty("date")]
-        public DateTimeOffset Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("reasons")]
-        public Reason[] Reasons { get; set; }
+        public Reason?[] Reasons { get; set; }
 
         [JsonProperty("holiday_name")]
         public string HolidayName { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 
     public enum Reason { PublicHoliday, Weekend };
