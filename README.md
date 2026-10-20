@@ -1,13 +1,13 @@
-# [Working Days API](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Working Days API](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Working Days is a simple tool for getting the number of working days in a month. It returns the number of working days in the given month.
+Working Days is a working days and business days API that counts the working days and non-working days for any country and month. Pass a two-letter country code and month number to get total counts, working date lists, and non-working days marked with holiday names.
 
 The Working Days API provides a simple, reliable way to integrate working days functionality into your applications. Built for developers who need production-ready working days capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -162,7 +162,7 @@ go get github.com/apiverve/workingdays-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Working Days API](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Working Days API](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/workingdays](https://docs.apiverve.com/ref/workingdays)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -192,11 +192,124 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Working Days API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "workingDaysCount": 21,
+    "nonWorkingDaysCount": 10,
+    "workingDays": [
+      "2023-10-02",
+      "2023-10-03",
+      "2023-10-04",
+      "2023-10-05",
+      "2023-10-06",
+      "2023-10-10",
+      "2023-10-11",
+      "2023-10-12",
+      "2023-10-13",
+      "2023-10-16",
+      "2023-10-17",
+      "2023-10-18",
+      "2023-10-19",
+      "2023-10-20",
+      "2023-10-23",
+      "2023-10-24",
+      "2023-10-25",
+      "2023-10-26",
+      "2023-10-27",
+      "2023-10-30",
+      "2023-10-31"
+    ],
+    "nonWorkingDays": [
+      {
+        "date": "2023-10-01",
+        "reasons": [
+          "weekend"
+        ],
+        "holiday_name": null
+      },
+      {
+        "date": "2023-10-07",
+        "reasons": [
+          "weekend"
+        ],
+        "holiday_name": null
+      },
+      {
+        "date": "2023-10-08",
+        "reasons": [
+          "weekend"
+        ],
+        "holiday_name": null
+      },
+      {
+        "date": "2023-10-09",
+        "reasons": [
+          "public holiday"
+        ],
+        "holiday_name": "Columbus Day"
+      },
+      {
+        "date": "2023-10-14",
+        "reasons": [
+          "weekend"
+        ],
+        "holiday_name": null
+      },
+      {
+        "date": "2023-10-15",
+        "reasons": [
+          "weekend"
+        ],
+        "holiday_name": null
+      },
+      {
+        "date": "2023-10-21",
+        "reasons": [
+          "weekend"
+        ],
+        "holiday_name": null
+      },
+      {
+        "date": "2023-10-22",
+        "reasons": [
+          "weekend"
+        ],
+        "holiday_name": null
+      },
+      {
+        "date": "2023-10-28",
+        "reasons": [
+          "weekend"
+        ],
+        "holiday_name": null
+      },
+      {
+        "date": "2023-10-29",
+        "reasons": [
+          "weekend"
+        ],
+        "holiday_name": null
+      }
+    ]
+  }
 }
 ```
 
@@ -204,7 +317,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Working Days API](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Working Days API](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
