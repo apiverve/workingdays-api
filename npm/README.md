@@ -1,6 +1,6 @@
 # Working Days API
 
-Working Days is a working days and business days API that counts the working days and non-working days for any country and month. Pass a two-letter country code and month number to get total counts, working date lists, and non-working days marked with holiday names.
+Working Days is a working days and business days API that counts the working days and non-working days for any country and month. Pass a two-letter country code and month number to get total counts, working date lists, and non-working days marked with holiday names. On paid plans, add a state or region for regional holidays, set a custom weekend, count between any two dates, or add business days to a date.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/workingdays.svg)](https://www.npmjs.com/package/@apiverve/workingdays)
 
@@ -59,7 +59,12 @@ Using the API is simple. All you have to do is make a request. The API will retu
 var query = {
   country: "US",
   month: 10,
-  year: 2026
+  year: 2026,
+  region: "CA",
+  weekend: "fri,sat",
+  start: "2026-03-01",
+  end: "2026-03-31",
+  addDays: 10
 };
 
 api.execute(query, function (error, data) {
@@ -81,7 +86,12 @@ You can also use promises to make requests. The API returns a promise that you c
 var query = {
   country: "US",
   month: 10,
-  year: 2026
+  year: 2026,
+  region: "CA",
+  weekend: "fri,sat",
+  start: "2026-03-01",
+  end: "2026-03-31",
+  addDays: 10
 };
 
 api.execute(query)
@@ -104,7 +114,12 @@ async function makeRequest() {
     var query = {
   country: "US",
   month: 10,
-  year: 2026
+  year: 2026,
+  region: "CA",
+  weekend: "fri,sat",
+  start: "2026-03-01",
+  end: "2026-03-31",
+  addDays: 10
 };
 
     try {

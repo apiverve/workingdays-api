@@ -30,7 +30,7 @@ class workingdaysWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/workingdays';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"country":{"type":"string","required":true,"minLength":2,"maxLength":2},"month":{"type":"integer","required":false,"min":1,"max":12},"year":{"type":"integer","required":false,"min":2000,"max":2050,"default":2026}};
+        this.validationRules = {"country":{"type":"string","required":true,"minLength":2,"maxLength":2},"month":{"type":"integer","required":false,"min":1,"max":12},"year":{"type":"integer","required":false,"min":2000,"max":2050,"default":2026},"region":{"type":"string","required":false,"maxLength":5},"weekend":{"type":"string","required":false,"maxLength":60},"start":{"type":"string","required":false,"format":"date"},"end":{"type":"string","required":false,"format":"date"},"addDays":{"type":"integer","required":false,"min":-250,"max":250,"format":"date"}};
     }
 
     /**

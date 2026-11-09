@@ -17,7 +17,12 @@ const api = new workingdaysAPI({
 var query = {
   country: "US",
   month: 10,
-  year: 2026
+  year: 2026,
+  region: "CA",
+  weekend: "fri,sat",
+  start: "2026-03-01",
+  end: "2026-03-31",
+  addDays: 10
 };
 
 // Make the API request using callback
