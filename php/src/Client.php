@@ -15,7 +15,7 @@ use APIVerve\Workingdays\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['country' => 'US', 'month' => 10, 'year' => 2026]);
+ * $response = $client->execute(['country' => 'US', 'month' => 10, 'year' => 2026, 'region' => 'CA', 'weekend' => 'fri,sat', 'start' => '2026-03-01', 'end' => '2026-03-31', 'addDays' => 10]);
  * print_r($response);
  * ```
  *
@@ -36,7 +36,12 @@ class Client
     private const VALIDATION_RULES = [
         'country' => ['type' => 'string', 'required' => true, 'minLength' => 2, 'maxLength' => 2],
         'month' => ['type' => 'integer', 'required' => false, 'min' => 1, 'max' => 12],
-        'year' => ['type' => 'integer', 'required' => false, 'min' => 2000, 'max' => 2050]
+        'year' => ['type' => 'integer', 'required' => false, 'min' => 2000, 'max' => 2050],
+        'region' => ['type' => 'string', 'required' => false, 'maxLength' => 5],
+        'weekend' => ['type' => 'string', 'required' => false, 'maxLength' => 60],
+        'start' => ['type' => 'string', 'required' => false, 'format' => 'date'],
+        'end' => ['type' => 'string', 'required' => false, 'format' => 'date'],
+        'addDays' => ['type' => 'integer', 'required' => false, 'min' => -250, 'max' => 250, 'format' => 'date']
     ];
 
     /**
