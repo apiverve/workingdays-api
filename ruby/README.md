@@ -1,6 +1,6 @@
 # Working Days API - Ruby Gem
 
-Working Days is a working days and business days API that counts the working days and non-working days for any country and month. Pass a two-letter country code and month number to get total counts, working date lists, and non-working days marked with holiday names.
+Working Days is a working days and business days API that counts the working days and non-working days for any country and month. Pass a two-letter country code and month number to get total counts, working date lists, and non-working days marked with holiday names. On paid plans, add a state or region for regional holidays, set a custom weekend, count between any two dates, or add business days to a date.
 
 ## Installation
 
@@ -38,7 +38,12 @@ client = APIVerve::Workingdays::Client.new(api_key: "YOUR_API_KEY")
 response = client.execute({
   country: "US",
   month: 10,
-  year: 2026
+  year: 2026,
+  region: "CA",
+  weekend: "fri,sat",
+  start: "2026-03-01",
+  end: "2026-03-31",
+  addDays: 10
 })
 
 # Print the response
@@ -50,7 +55,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ country: "US", month: 10, year: 2026 })
+  response = client.execute({ country: "US", month: 10, year: 2026, region: "CA", weekend: "fri,sat", start: "2026-03-01", end: "2026-03-31", addDays: 10 })
   puts response["data"]
 rescue APIVerve::Workingdays::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"

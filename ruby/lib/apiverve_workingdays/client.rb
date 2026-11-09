@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Workingdays::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ country: "US", month: 10, year: 2026 })
+    #   response = client.execute({ country: "US", month: 10, year: 2026, region: "CA", weekend: "fri,sat", start: "2026-03-01", end: "2026-03-31", addDays: 10 })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/workingdays?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'country' => { type: 'string', required: true, min_length: 2, max_length: 2 }, 'month' => { type: 'integer', required: false, min: 1, max: 12 }, 'year' => { type: 'integer', required: false, min: 2000, max: 2050 } }
+      VALIDATION_RULES = { 'country' => { type: 'string', required: true, min_length: 2, max_length: 2 }, 'month' => { type: 'integer', required: false, min: 1, max: 12 }, 'year' => { type: 'integer', required: false, min: 2000, max: 2050 }, 'region' => { type: 'string', required: false, max_length: 5 }, 'weekend' => { type: 'string', required: false, max_length: 60 }, 'start' => { type: 'string', required: false, format: 'date' }, 'end' => { type: 'string', required: false, format: 'date' }, 'addDays' => { type: 'integer', required: false, min: -250, max: 250, format: 'date' } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
