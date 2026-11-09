@@ -69,7 +69,12 @@ namespace APIVerve.API.WorkingDays
         {
             { "country", new ValidationRule { Type = "string", Required = true, MinLength = 2, MaxLength = 2 } },
             { "month", new ValidationRule { Type = "integer", Required = false, Min = 1, Max = 12 } },
-            { "year", new ValidationRule { Type = "integer", Required = false, Min = 2000, Max = 2050 } }
+            { "year", new ValidationRule { Type = "integer", Required = false, Min = 2000, Max = 2050 } },
+            { "region", new ValidationRule { Type = "string", Required = false, MaxLength = 5 } },
+            { "weekend", new ValidationRule { Type = "string", Required = false, MaxLength = 60 } },
+            { "start", new ValidationRule { Type = "string", Required = false, Format = "date" } },
+            { "end", new ValidationRule { Type = "string", Required = false, Format = "date" } },
+            { "addDays", new ValidationRule { Type = "integer", Required = false, Min = -250, Max = 250, Format = "date" } }
         };
 
         /// <summary>Format validation patterns</summary>

@@ -1,7 +1,7 @@
 Working Days API
 ============
 
-Working Days is a working days and business days API that counts the working days and non-working days for any country and month. Pass a two-letter country code and month number to get total counts, working date lists, and non-working days marked with holiday names.
+Working Days is a working days and business days API that counts the working days and non-working days for any country and month. Pass a two-letter country code and month number to get total counts, working date lists, and non-working days marked with holiday names. On paid plans, add a state or region for regional holidays, set a custom weekend, count between any two dates, or add business days to a date.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.WorkingDays.svg)](https://www.nuget.org/packages/APIVerve.API.WorkingDays)
@@ -62,7 +62,12 @@ class Program
         var queryOptions = new WorkingDaysQueryOptions {
             Country = "US",
             Month = 10,
-            Year = 2026
+            Year = 2026,
+            Region = "CA",
+            Weekend = "fri,sat",
+            Start = "2026-03-01",
+            End = "2026-03-31",
+            AddDays = 10
         };
 
         // Make the API call
@@ -128,7 +133,12 @@ public class Example
         var queryOptions = new WorkingDaysQueryOptions {
             Country = "US",
             Month = 10,
-            Year = 2026
+            Year = 2026,
+            Region = "CA",
+            Weekend = "fri,sat",
+            Start = "2026-03-01",
+            End = "2026-03-31",
+            AddDays = 10
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -162,7 +172,12 @@ public class Example
         var queryOptions = new WorkingDaysQueryOptions {
             Country = "US",
             Month = 10,
-            Year = 2026
+            Year = 2026,
+            Region = "CA",
+            Weekend = "fri,sat",
+            Start = "2026-03-01",
+            End = "2026-03-31",
+            AddDays = 10
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -201,7 +216,12 @@ public class Example
         var queryOptions = new WorkingDaysQueryOptions {
             Country = "US",
             Month = 10,
-            Year = 2026
+            Year = 2026,
+            Region = "CA",
+            Weekend = "fri,sat",
+            Start = "2026-03-01",
+            End = "2026-03-31",
+            AddDays = 10
         };
 
         try
@@ -259,7 +279,12 @@ public class Example
         var queryOptions = new WorkingDaysQueryOptions {
             Country = "US",
             Month = 10,
-            Year = 2026
+            Year = 2026,
+            Region = "CA",
+            Weekend = "fri,sat",
+            Start = "2026-03-01",
+            End = "2026-03-31",
+            AddDays = 10
         };
 
         try
@@ -302,7 +327,12 @@ apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 var queryOptions = new WorkingDaysQueryOptions {
     Country = "US",
     Month = 10,
-    Year = 2026
+    Year = 2026,
+    Region = "CA",
+    Weekend = "fri,sat",
+    Start = "2026-03-01",
+    End = "2026-03-31",
+    AddDays = 10
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -330,7 +360,12 @@ apiClient.SetLogger(message =>
 var queryOptions = new WorkingDaysQueryOptions {
     Country = "US",
     Month = 10,
-    Year = 2026
+    Year = 2026,
+    Region = "CA",
+    Weekend = "fri,sat",
+    Start = "2026-03-01",
+    End = "2026-03-31",
+    AddDays = 10
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -350,7 +385,12 @@ apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (defau
 var queryOptions = new WorkingDaysQueryOptions {
     Country = "US",
     Month = 10,
-    Year = 2026
+    Year = 2026,
+    Region = "CA",
+    Weekend = "fri,sat",
+    Start = "2026-03-01",
+    End = "2026-03-31",
+    AddDays = 10
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -364,7 +404,12 @@ The API client implements `IDisposable` for proper resource cleanup:
 var queryOptions = new WorkingDaysQueryOptions {
     Country = "US",
     Month = 10,
-    Year = 2026
+    Year = 2026,
+    Region = "CA",
+    Weekend = "fri,sat",
+    Start = "2026-03-01",
+    End = "2026-03-31",
+    AddDays = 10
 };
 
 using (var apiClient = new WorkingDaysAPIClient("[YOUR_API_KEY]"))
