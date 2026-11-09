@@ -1,6 +1,6 @@
 # [Working Days API](https://apiverve.com/marketplace/workingdays?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Working Days is a working days and business days API that counts the working days and non-working days for any country and month. Pass a two-letter country code and month number to get total counts, working date lists, and non-working days marked with holiday names.
+Working Days is a working days and business days API that counts the working days and non-working days for any country and month. Pass a two-letter country code and month number to get total counts, working date lists, and non-working days marked with holiday names. On paid plans, add a state or region for regional holidays, set a custom weekend, count between any two dates, or add business days to a date.
 
 The Working Days API provides a simple, reliable way to integrate working days functionality into your applications. Built for developers who need production-ready working days capabilities without the complexity of building from scratch.
 
