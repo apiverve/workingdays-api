@@ -23,7 +23,7 @@ namespace APIVerve.API.WorkingDays
         public int? Month { get; set; }
 
         /// <summary>
-        /// The year you want to get the number of working days for
+        /// The year you want to get the number of working days for; defaults to the current year
         /// </summary>
         [JsonProperty("year")]
         public int? Year { get; set; }
