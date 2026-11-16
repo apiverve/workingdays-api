@@ -51,7 +51,9 @@ paths:
           schema:
             type: integer
           required: false
-          description: The year you want to get the number of working days for
+          description: >-
+            The year you want to get the number of working days for; defaults to
+            the current year
           example: 2026
         - name: region
           in: query
